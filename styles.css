@@ -1,12 +1,99 @@
 body {
   background-color: #e6f1fc;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.weather-bg-clear { background-image: url("assets/clear.jpg"); }
+.weather-bg-clouds { background-image: url("assets/clouds.jpg"); }
+.weather-bg-rain { background-image: url("assets/rain.jpg"); }
+.weather-bg-snow { background-image: url("assets/snow.jpg"); }
+.weather-bg-thunderstorm { background-image: url("assets/thunderstorm.jpg"); }
+.weather-bg-fog { background-image: url("assets/fog.jpg"); }
+
+.text-shadow {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.glass {
+  --bs-card-bg: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+.glass .bg-body-tertiary {
+  background-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-bs-theme="dark"] .glass {
+  --bs-card-bg: rgba(0, 0, 0, 0.4);
+}
+
+[data-bs-theme="dark"] .glass .bg-body-tertiary {
+  background-color: rgba(255, 255, 255, 0.12) !important;
 }
 
 .weather-icon {
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
 }
 
-.chart-wrap {
-  height: 280px;
+.slot {
+  min-width: 72px;
+}
+
+.slot-icon {
+  width: 56px;
+  height: 56px;
+}
+
+.slot-clickable {
+  cursor: pointer;
+}
+
+.line-band {
+  width: 100%;
+  height: 70px;
+}
+
+.line-temp,
+.line-night,
+.line-pop {
+  fill: none;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.line-temp {
+  stroke: var(--bs-danger);
+}
+
+.line-night {
+  stroke: var(--bs-primary);
+}
+
+.line-pop {
+  stroke: var(--bs-primary);
+  stroke-dasharray: 4 3;
+}
+
+/* biały obrys, by ciemne elementy ikon były widoczne na ciemnych panelach */
+.weather-icon,
+.slot-icon {
+  filter: drop-shadow(1px 0 0 #fff) drop-shadow(-1px 0 0 #fff) drop-shadow(0 1px 0 #fff) drop-shadow(0 -1px 0 #fff);
+}
+
+.area {
+  stroke: none;
+  fill-opacity: 0.25;
+}
+
+.area-temp {
+  fill: var(--bs-danger);
+}
+
+.area-night,
+.area-pop {
+  fill: var(--bs-primary);
 }
