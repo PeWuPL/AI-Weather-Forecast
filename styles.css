@@ -1,3 +1,12 @@
 body {
   background-color: #e6f1fc;
 }
+
+.weather-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.chart-wrap {
+  height: 280px;
+}
